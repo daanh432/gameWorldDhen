@@ -1,0 +1,90 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background: url("../images/background.jpg") no-repeat;
+}
+
+/* Header CSS */
+header {
+    height: 80px;
+    background: rgba(68, 68, 68, 0.7);
+    width: 70%;
+    margin: 20px auto 0 auto;
+}
+
+header #logoDhen {
+    margin-top: 14px;
+    margin-left: 70px;
+    float: left;
+    color: #fff;
+    font-size: 41px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header #logoDhen:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+#navigationDhen {
+    float: right;
+    margin-right: 70px;
+    height: 100%;
+}
+
+#navigationDhen ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#navigationDhen li {
+    display: inline-block;
+    height: 100%;
+}
+
+#navigationDhen li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 25px 18px;
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#navigationDhen li a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+
+/* End of Header CSS */
+
+/* Footer CSS */
+
+footer {
+    position:absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    overflow:hidden;
+    height: 80px;
+    background: rgba(68, 68, 68, 0.7);
+    width: 70%;
+}
+
+footer #copyrightDhen {
+    color: #fff;
+    margin-top:28px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align:center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* End of Footer CSS*/

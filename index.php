@@ -8,9 +8,10 @@
     <title>Game World</title>
 </head>
 <body>
-<?php include("menu.html"); ?>
-<div id="frontPageTextDhen">
-    <h1>Welcome to Game World</h1>
+<?php include("header.html"); ?>
+<div id="bannerDhen">
+
 </div>
+<?php include("footer.html"); ?>
 </body>
 </html>
