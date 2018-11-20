@@ -1,28 +1,41 @@
+body, html { /* Full sized page for footer */
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     background: url("../images/background.jpg") no-repeat;
     background-size: cover;
-    height: 100%;
+    font-family: sans-serif;
+}
+
+.wrapperDhen {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    /*padding-bottom: 60px;*/
+    min-height: calc(100vh - 160px);
+}
+
+.clearfix {
+    clear: both;
 }
 
 /* Header CSS */
 header {
     height: 80px;
     background: rgba(68, 68, 68, 1);
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
-    -webkit-border-radius: 0 0 20px 20px;
-    -moz-border-radius: 0 0 20px 20px;
     border-radius: 0 0 20px 20px;
 }
 
 header #logoDhen {
     margin-top: 14px;
-    margin-left: 70px;
     float: left;
     color: #fff;
-    font-size: 41px;
+    font-size: 250%;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
@@ -35,8 +48,27 @@ header #logoDhen:hover {
 
 #navigationDhen {
     float: right;
-    margin-right: 70px;
     height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    header #logoDhen {
+        margin-left: 10px;
+    }
+
+    #navigationDhen {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    header #logoDhen {
+        margin-left: 70px;
+    }
+
+    #navigationDhen {
+        margin-right: 70px;
+    }
 }
 
 #navigationDhen ul {
@@ -56,7 +88,7 @@ header #logoDhen:hover {
     color: white;
     text-align: center;
     padding: 25px 18px;
-    font-size: 27px;
+    font-size: 155%;
     font-weight: bold;
     text-decoration: none;
 }
@@ -71,23 +103,18 @@ header #logoDhen:hover {
 /* Footer CSS */
 
 footer {
-    position: absolute;
-
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    margin: 0 auto;
     overflow: hidden;
-    height: 80px;
+    height: 60px;
     background: rgba(68, 68, 68, 1);
-    width: 70%;
+    width: 80%;
     border-radius: 20px 20px 0 0;
 }
 
 footer #copyrightDhen {
     color: #fff;
-    margin-top: 28px;
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 110%;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
@@ -100,44 +127,48 @@ footer #copyrightDhen {
 #bannerDhen {
     position: relative;
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
 }
 
 #bannerImageDhen {
+    width: 100%;
     max-height: 410px;
-    vertical-align: middle;
     overflow: hidden;
     border-radius: 20px;
 }
 
 #bannerImageDhen img {
     width: 100%;
-    filter: blur(2px) grayscale(0.6);
+    filter: blur(2px);
 }
 
 #bannerTextDhen {
     position: absolute;
-    top: 30px;
+    bottom: 30px;
     left: 30px;
 }
 
 #bannerTextDhen h1, #bannerTextDhen h2 {
-    color: #ff0000;
+    color: white;
 }
 
 #bannerTextDhen h1 {
-    font-size: 50px;
+    font-size: 310%;
+}
+
+#bannerTextDhen h2 {
+    font-size: 210%;
 }
 
 #categoryButtonsContainerDhen {
-    width: 50%;
-    margin: 0 auto;
+    width: 40%;
+    margin: 20px auto 0;
 }
 
 .categoryButtonsDhen {
     display: inline-block;
-    width: 32.9%;
-    padding-top: 32.9%;
+    width: 32.5%;
+    padding-top: 32.5%;
     box-sizing: border-box;
     border: 3px solid #ccc;
     border-radius: 20px;
@@ -163,15 +194,15 @@ footer #copyrightDhen {
 #contactPageFormDhen {
     width: 25%;
     margin: 20px auto 0 auto;
-    background-color: #bbb;
+    background-color: rgba(54, 88, 142, 0.8);
     border-radius: 20px;
     padding: 20px;
+    color: white;
 }
 
 .userFormDhen input {
     display: block;
     float: none;
-    font-family: sans-serif;
 }
 
 .userFormDhen input[type=submit] {
@@ -212,3 +243,100 @@ footer #copyrightDhen {
 }
 
 /* End of Contact Page CSS */
+
+/* Start of Games CSS */
+
+#categoryNameBannerDhen {
+    width:82.4%;
+    display: block;
+    /*background: rgba(68, 68, 68, 0.9);*/
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto 0 auto;
+}
+
+#categoryNameBannerDhen h1 {
+    margin: 0;
+    padding:0;
+    color: white;
+    display: inline-block;
+}
+
+#gameListDhen {
+    width:82.4%;
+    display: block;
+    background: rgba(68, 68, 68, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto 0 auto;
+}
+
+.gameItemsDhen {
+    float: left;
+    position: relative;
+    height: 300px;
+    width: 200px;
+    margin: 0 1% 10px 0;
+    padding: 0;
+    overflow: hidden;
+    background: white;
+}
+
+.gameItemsDhen:nth-child(6n) {
+    margin-right:0;
+}
+
+.gameItemsDhen img {
+    display: block;
+    height: 200px;
+    width: 200px;
+    border: 0;
+    background-color: rgba(68, 68, 68, 0.5);
+    vertical-align: middle;
+    object-fit: contain;
+    object-position: center;
+}
+
+.gameItemsDhen .gameNamesDhen {
+    text-align: center;
+}
+
+.gameItemsDhen .gamePricesDhen {
+    position: absolute;
+    background: green;
+    padding: 0 5px 0 5px;
+    border-radius: 10px;
+    top: 160px;
+    right: 0;
+}
+
+.gameItemsDhen .gameOrderButtonsDhen {
+    position: absolute;
+    border: none;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.gameItemsDhen .gameOrderButtonsDhen:hover {
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+.gameCategoryIncorrectDhen {
+    width: 50%;
+    margin: 50px auto 0;
+    background: red;
+    padding: 20px;
+    border-radius: 20px;
+    height: 200px;
+}
+
+.gameCategoryIncorrectDhen p {
+    margin-top: 85px;
+    text-align: center;
+}
+
+/* End of Games CSS */
