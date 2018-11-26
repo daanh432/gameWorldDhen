@@ -33,7 +33,7 @@ function PrintGameItem($row, $color, $backColor)
     echo "<img src='" . $row["gamePicture"] . "'>";
     echo "<div class='gamePricesDhen'><p>&euro;" . $row["gamePrice"] . "</p></div>";
     echo "<div class='gameNamesDhen'><p>" . $row["gameName"] . "</p></div>";
-    echo "<a class='gameOrderButtonsDhen' href='php/addToBasket.php?gameId=" . $row["gameId"] . "&returnUrl=" . $_SERVER["REQUEST_URI"] . "' style='color:$color; background:$backColor;'>Order</a>";
+    echo "<a class='gameOrderButtonsDhen' href='php/addToBasket.php?gameId=" . $row["gameId"] . "' style='color:$color; background:$backColor;'>Order</a>";
     echo "</div>";
 }
 
