@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <?php
+//Default variables
 $categoryName = "All games";
 $categoryColor = "red";
+$categoryTextColor = "black";
 include_once('./php/mysql.php');
 if (isset($_GET["categoryId"])) {
     $categoryIdDhen = mysqli_real_escape_string($conn, $_GET["categoryId"]);
 }
 
-function PrintCategoryBanner($categoryIdDhen)
+function GetCategoryDetails($categoryIdDhen)
 {
     global $conn; // Use the global variable conn
-    global $categoryColor;// Use global variable for the color
+    global $categoryColor; // Use global variable for the color
+    global $categoryName; // Use global variable for the name
+    global $categoryTextColor; // Use global variable for text color
     $sql = "SELECT * from categorys WHERE id='$categoryIdDhen'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
+            $categoryTextColor = $row["categoryTextColor"];
             $categoryColor = $row["categoryColor"];
-            return "<h1 style='color:" . $row["categoryColor"] . "'>" . $row["categoryName"] . "</h1>";
+            $categoryName = $row["categoryName"];
         }
     }
 }
 
-function PrintGameItem($row, $color)
+function PrintGameItem($row, $color, $backColor)
 {
     echo "<div class='gameItemsDhen'>";
     echo "<img src='" . $row["gamePicture"] . "'>";
     echo "<div class='gamePricesDhen'><p>&euro;" . $row["gamePrice"] . "</p></div>";
     echo "<div class='gameNamesDhen'><p>" . $row["gameName"] . "</p></div>";
-    echo "<button class='gameOrderButtonsDhen' style='background:$color;'>Order</button>";
+    echo "<a class='gameOrderButtonsDhen' href='php/addToBasket.php?gameId=" . $row["gameId"] . "&returnUrl=" . $_SERVER["REQUEST_URI"] . "' style='color:$color; background:$backColor;'>Order</a>";
     echo "</div>";
 }
 
@@ -47,8 +52,9 @@ function PrintGameItem($row, $color)
 <div class="wrapperDhen">
     <?php
     if (isset($_GET["categoryId"])) {
+        GetCategoryDetails($categoryIdDhen);
         echo "<div id='categoryNameBannerDhen'>";
-        echo PrintCategoryBanner($categoryIdDhen);
+        echo "<h1 style='color:$categoryTextColor;'>$categoryName</h1>";
         echo "</div>";
         $sql = "SELECT * from games WHERE categoryId = '$categoryIdDhen'";
         $result = $conn->query($sql);
@@ -57,12 +63,11 @@ function PrintGameItem($row, $color)
             // output data of each row
             echo "<div id='gameListDhen'>";
             while ($row = $result->fetch_assoc()) {
-                PrintGameItem($row, $categoryColor); // Run the function to print every row to the viewport
+                PrintGameItem($row, $categoryTextColor, $categoryColor); // Run the function to print every row to the viewport
             }
             echo "<div class='clearfix'></div>";
             echo "</div>";
         } else {
-            header('HTTP/1.1 404 Not Found');
             echo "<div class='gameCategoryIncorrectDhen'>";
             echo "<p>Game category: " . $_GET["categoryId"] . " doesn't contain any games!</p>";
             echo "</dev>";
@@ -75,7 +80,7 @@ function PrintGameItem($row, $color)
             // output data of each row
             echo "<div id='gameListDhen'>";
             while ($row = $result->fetch_assoc()) {
-                PrintGameItem($row, $categoryColor); // Run the function to print every row to the viewport
+                PrintGameItem($row, $categoryTextColor, $categoryColor); // Run the function to print every row to the viewport
             }
             echo "<div class='clearfix'></div>";
             echo "</div>";
