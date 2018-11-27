@@ -1,3 +1,7 @@
+<?php
+include_once('./php/mysql.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +15,6 @@
 <?php include("header.html"); ?>
 <div class="wrapperDhen">
     <?php
-    include_once('./php/mysql.php');
-    session_start();
 
     if (isset($_SESSION["basket"])) {
         $basketKeys = array_keys($_SESSION["basket"]);
@@ -42,7 +44,7 @@
                 }
             }
         }
-        echo "<tr><td></td><td></td><td></td><td><p>Total: &euro;" . $totalSum . "</p></td><td><button>Go to checkout</button></td></tr>";
+        echo "<tr><td></td><td></td><td></td><td><p>Total: &euro;" . $totalSum . "</p></td><td><button id='goToCheckoutDhen'>Go to checkout</button></td></tr>";
         echo "</table>";
 
     } else {
