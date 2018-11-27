@@ -37,7 +37,7 @@
         ?>
         <div id="contactPageFormDhen">
             <h1>Thanks for sending us a message!</h1>
-            <p>You'll receive a response in your mailbox!</p>
+            <p>You'll receive a response as soon as possible in your mailbox!</p>
             <meta http-equiv="refresh" content="10">
         </div>
         <?php
