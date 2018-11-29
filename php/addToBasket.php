@@ -16,3 +16,4 @@ if (isset($_GET["gameId"])) {
 }
 
 header("Location: ../basket.php");
+die();
