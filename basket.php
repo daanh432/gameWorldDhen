@@ -16,8 +16,8 @@ session_start();
 <div class="wrapperDhen">
     <?php
 
-    if (isset($_SESSION["basket"])) {
-        $basketKeys = array_keys($_SESSION["basket"]);
+    if (isset($_SESSION["basketDhen"])) {
+        $basketKeys = array_keys($_SESSION["basketDhen"]);
         $sql = "SELECT * from games WHERE gameId in (" . implode(",", $basketKeys) . ")";
         $totalSum = 0.00;
         $result = $conn->query($sql);
@@ -28,7 +28,7 @@ session_start();
                 // output data of each row
                 while ($row = $result->fetch_assoc()) {
                     $gameId = $row["gameId"];
-                    $gameAmount = $_SESSION["basket"][$row["gameId"]]["amount"];
+                    $gameAmount = $_SESSION["basketDhen"][$row["gameId"]]["amount"];
                     echo "<tr>";
                     echo "<td><img src='" . $row["gamePicture"] . "'></td>";
                     echo "<td><p>" . $row["gameName"] . "</p></td>";
