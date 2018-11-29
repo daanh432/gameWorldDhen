@@ -5,9 +5,18 @@ body, html { /* Full sized page for footer */
 body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+}
+
+#backgroundImageDhen {
     background: url("../images/background.jpg") no-repeat;
     background-size: cover;
-    font-family: sans-serif;
+    z-index: -1000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .wrapperDhen {
@@ -15,7 +24,7 @@ body {
     width: 80%;
     margin: 20px auto 0 auto;
     min-height: calc(100vh - 160px);
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .clearfix {
@@ -260,11 +269,11 @@ footer #copyrightDhen {
 /* Start of Games CSS */
 
 #categoryNameBannerDhen {
-    width: 83%;
+    width: 831px;
     display: block;
     border-radius: 20px;
     padding: 20px;
-    margin: 20px auto 0 auto;
+    margin: 0 auto;
 }
 
 #categoryNameBannerDhen h1 {
@@ -275,12 +284,12 @@ footer #copyrightDhen {
 }
 
 #gameListDhen {
-    width: 83%;
+    width: 831px;
     display: block;
     background: rgba(68, 68, 68, 0.9);
     border-radius: 20px;
     padding: 20px;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
 }
 
 .gameItemsDhen {
@@ -294,7 +303,7 @@ footer #copyrightDhen {
     background: white;
 }
 
-.gameItemsDhen:nth-child(6n) {
+.gameItemsDhen:nth-child(4n) {
     margin-right: 0;
 }
 
