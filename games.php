@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <?php
 //Default variables
-//$categoryName = "All games";
-//$categoryColor = "red";
-//$categoryTextColor = "black";
 include_once('./php/mysql.php');
 if (isset($_GET["categoryId"])) {
     $categoryIdDhen = mysqli_real_escape_string($conn, $_GET["categoryId"]);
