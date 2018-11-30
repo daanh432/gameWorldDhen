@@ -33,6 +33,7 @@ body {
 
 /* Header CSS */
 header {
+    position: relative;
     height: 80px;
     background: rgba(68, 68, 68, 1);
     width: 80%;
@@ -41,8 +42,9 @@ header {
 }
 
 header #logoDhen {
-    margin-top: 14px;
-    float: left;
+    position: absolute;
+    top: 14px;
+    left:50px;
     color: #fff;
     font-size: 250%;
     font-weight: bold;
@@ -56,7 +58,8 @@ header #logoDhen:hover {
 }
 
 #navigationDhen {
-    float: right;
+    position: absolute;
+    right: 10px;
     height: 100%;
 }
 
@@ -65,26 +68,6 @@ header #logoDhen:hover {
     height: 50px;
     padding: 0;
     margin: 0;
-}
-
-@media only screen and (max-width: 600px) {
-    header #logoDhen {
-        margin-left: 10px;
-    }
-
-    #navigationDhen {
-        margin-right: 0;
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    header #logoDhen {
-        margin-left: 70px;
-    }
-
-    #navigationDhen {
-        margin-right: 70px;
-    }
 }
 
 #navigationDhen ul {
@@ -269,7 +252,6 @@ footer #copyrightDhen {
 /* Start of Games CSS */
 
 #categoryNameBannerDhen {
-    width: 831px;
     display: block;
     border-radius: 20px;
     padding: 20px;
@@ -283,9 +265,21 @@ footer #copyrightDhen {
     display: inline-block;
 }
 
+@media only screen and (max-width: 900px) {
+    .gameItemsDhen {
+        flex-basis: 49%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .gameItemsDhen {
+        flex-basis: 24%;
+    }
+}
+
 #gameListDhen {
-    width: 831px;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     background: rgba(68, 68, 68, 0.9);
     border-radius: 20px;
     padding: 20px;
@@ -293,7 +287,6 @@ footer #copyrightDhen {
 }
 
 .gameItemsDhen {
-    float: left;
     position: relative;
     height: 300px;
     width: 200px;
@@ -304,14 +297,10 @@ footer #copyrightDhen {
     text-align: center;
 }
 
-.gameItemsDhen:nth-child(4n) {
-    margin-right: 0;
-}
-
 .gameItemsDhen img {
     display: block;
     height: 200px;
-    width: 200px;
+    width: 100%;
     border: 0;
     background-color: rgba(68, 68, 68, 0.5);
     vertical-align: middle;
