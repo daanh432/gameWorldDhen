@@ -17,9 +17,9 @@ function PrintGameItem($row)
     $categoryColor = $row["categoryColor"];
     $categoryTextColor = $row["categoryTextColor"];
     echo "<div class='gameItemsDhen'>";
-    echo "<img src='" . $row["gamePicture"] . "'>";
+    echo "<a href='product.php?productId=" . $row["gameId"] . "'><img src='" . $row["gamePicture"] . "'></a>";
     echo "<div class='gamePricesDhen' style='background:$categoryColor; color:$categoryTextColor'><p>&euro;" . $row["gamePrice"] . "</p></div>";
-    echo "<div class='gameNamesDhen'><p>" . $row["gameName"] . "</p></div>";
+    echo "<div class='gameNamesDhen'><a href='product.php?productId=" . $row["gameId"] . "'>" . $row["gameName"] . "</a></div>";
     echo "<a class='gameOrderButtonsDhen' href='php/addToBasket.php?gameId=" . $row["gameId"] . "' style='color:$categoryTextColor; background:$categoryColor;'>Order</a>";
     echo "</div>";
 }

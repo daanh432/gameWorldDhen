@@ -301,6 +301,7 @@ footer #copyrightDhen {
     padding: 0;
     overflow: hidden;
     background: white;
+    text-align: center;
 }
 
 .gameItemsDhen:nth-child(4n) {
@@ -318,8 +319,13 @@ footer #copyrightDhen {
     object-position: center;
 }
 
-.gameItemsDhen .gameNamesDhen {
-    text-align: center;
+.gameNamesDhen {
+    margin-top: 10px;
+}
+
+.gameNamesDhen a {
+    text-decoration: none;
+    color: black;
 }
 
 .gameItemsDhen .gamePricesDhen {
@@ -331,7 +337,7 @@ footer #copyrightDhen {
     right: 0;
 }
 
-.gameItemsDhen .gameOrderButtonsDhen {
+.gameOrderButtonsDhen {
     position: absolute;
     text-align: center;
     border: none;
@@ -342,7 +348,7 @@ footer #copyrightDhen {
     cursor: pointer;
 }
 
-.gameItemsDhen .gameOrderButtonsDhen:hover {
+.gameOrderButtonsDhen:hover {
     transition: 0.2s;
     opacity: 0.7;
 }
@@ -456,3 +462,66 @@ footer #copyrightDhen {
 }
 
 /* End of Checkout CSS */
+
+/* Start of Product Info CSS */
+
+#productInfoDhen {
+    width: 80%;
+    display: block;
+    background: rgba(68, 68, 68, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto 0 auto;
+    position: relative;
+}
+
+#productInfoMainPictureDhen {
+    width: 30%;
+    float: left;
+    margin-right: 0.5%;
+}
+
+#productInfoSecondaryPictureDhen {
+    width: 49%;
+    max-height: 270px;
+    object-fit: contain;
+    float: left;
+    margin-right: 2%;
+}
+
+#productInfoTertiaryPictureDhen {
+    width: 49%;
+    max-height: 270px;
+    object-fit: contain;
+    float: left;
+}
+
+#productInfoDetailsDhen {
+    margin-top: 20px;
+}
+
+#productInfoDetailsDhen p {
+    color: white;
+}
+
+#productInfoOrderDhen {
+    position: absolute;
+    right: 0;
+    width: 30%;
+}
+
+#productInfoDetailsDhen form input[type=number] {
+    width: 10%;
+    padding: 9px;
+    text-align: center;
+}
+
+#productInfoDetailsDhen form input[type=submit] {
+    text-align: center;
+    border: none;
+    width: 70%;
+    padding: 10px 0 10px 0;
+    cursor: pointer;
+}
+
+/* End of Product Info CSS */

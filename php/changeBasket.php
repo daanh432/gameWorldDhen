@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-
-if (isset($_GET["gameId"])) {
+if (isset($_SESSION["basketDhen"]) && isset($_GET["gameId"])) {
     if (isset($_GET["amount"])) {
         if (isset($_SESSION["basketDhen"][$_GET["gameId"]])) {
             if ($_GET["amount"] > 0 && $_GET["amount"] <= 10) {
