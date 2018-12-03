@@ -13,7 +13,7 @@ include_once('./php/mysql.php');
     <title>Game World - Store</title>
 </head>
 <body>
-<?php include("header.html"); ?>
+<?php include("header.php"); ?>
 <div class="wrapperDhen">
     <?php
     if (isset($_GET["productId"])) {

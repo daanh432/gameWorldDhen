@@ -6,7 +6,8 @@ if (isset($_GET["categoryId"])) {
     $categoryIdDhen = mysqli_real_escape_string($conn, $_GET["categoryId"]);
 }
 
-function PrintCategoryHeader($categoryColor, $categoryTextColor, $categoryName){
+function PrintCategoryHeader($categoryColor, $categoryTextColor, $categoryName)
+{
     echo "<div id='categoryNameBannerDhen' style='background:$categoryColor'>";
     echo "<h1 style='color:$categoryTextColor;'>$categoryName</h1>";
     echo "</div>";
@@ -20,6 +21,7 @@ function PrintGameItem($row)
     echo "<a href='product.php?productId=" . $row["gameId"] . "'><img src='" . $row["gamePicture"] . "'></a>";
     echo "<div class='gamePricesDhen' style='background:$categoryColor; color:$categoryTextColor'><p>&euro;" . $row["gamePrice"] . "</p></div>";
     echo "<div class='gameNamesDhen'><a href='product.php?productId=" . $row["gameId"] . "'>" . $row["gameName"] . "</a></div>";
+//    echo "<a class='gameOrderButtonsDhen' href='php/addToBasket.php?gameId=" . $row["gameId"] . "' style='color:$categoryTextColor; background:$categoryColor;'>Order</a>";
     echo "<a class='gameOrderButtonsDhen' href='php/addToBasket.php?gameId=" . $row["gameId"] . "' style='color:$categoryTextColor; background:$categoryColor;'>Order</a>";
     echo "</div>";
 }
@@ -35,7 +37,7 @@ function PrintGameItem($row)
     <title>Game World - Store</title>
 </head>
 <body>
-<?php include("header.html"); ?>
+<?php include("header.php"); ?>
 <div class="wrapperDhen">
     <?php
     if (isset($_GET["categoryId"])) {

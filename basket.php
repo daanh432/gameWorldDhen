@@ -12,7 +12,7 @@ session_start();
     <title>Game World - Checkout</title>
 </head>
 <body>
-<?php include("header.html"); ?>
+<?php include("header.php"); ?>
 <div class="wrapperDhen">
     <?php
 

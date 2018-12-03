@@ -8,7 +8,7 @@
     <title>Game World - Contact</title>
 </head>
 <body>
-<?php include("header.html"); ?>
+<?php include("header.php"); ?>
 <div class="wrapperDhen">
     <?php
     if (!isset($_POST["Send"])) {

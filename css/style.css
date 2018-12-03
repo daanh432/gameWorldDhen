@@ -44,7 +44,7 @@ header {
 header #logoDhen {
     position: absolute;
     top: 14px;
-    left:50px;
+    left: 50px;
     color: #fff;
     font-size: 250%;
     font-weight: bold;
@@ -61,6 +61,7 @@ header #logoDhen:hover {
     position: absolute;
     right: 10px;
     height: 100%;
+    margin-right:50px;
 }
 
 .basketIconDhen {
@@ -68,6 +69,9 @@ header #logoDhen:hover {
     height: 50px;
     padding: 0;
     margin: 0;
+    position: absolute;
+    top: 12px;
+    right: -40px;
 }
 
 #navigationDhen ul {
@@ -80,10 +84,9 @@ header #logoDhen:hover {
 #navigationDhen li {
     display: inline-block;
     height: 100%;
-    overflow: hidden;
 }
 
-#navigationDhen li a {
+.navigationHrefDhen {
     display: inline-block;
     color: white;
     text-align: center;
@@ -98,9 +101,43 @@ header #logoDhen:hover {
     margin: 0;
 }
 
-#navigationDhen li a:hover {
+.navigationHrefDhen:hover, .basketIconDhen:hover {
     background-color: #111;
     transition: 0.5s;
+}
+
+#menuGamesDropdownDhen {
+    position: relative;
+    display: inline-block;
+}
+
+#menuGamesDropdownContentDhen {
+    display: none;
+    position: absolute;
+    background-color: #f8f8f8;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 0 0 10px 10px;
+}
+
+#menuGamesDropdownDhen:hover #menuGamesDropdownContentDhen {
+    display: block;
+}
+
+.menuGamesItemDropdownDhen {
+    display: block;
+    color: black;
+    text-align: left;
+    padding: 15px 5px 15px 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menuGamesItemDropdownDhen:hover {
+    transition: 0.5s;
+    background-color: rgba(0,0,0,0.2);
 }
 
 /* End of Header CSS */
@@ -194,6 +231,29 @@ footer #copyrightDhen {
 
 /* End of Index Page CSS */
 
+/* Start of About Us Page CSS */
+
+#aboutUsPageDhen {
+    width: 70%;
+    margin: 20px auto 0 auto;
+    background-color: rgba(68, 68, 68, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+}
+
+#aboutUsImageDhen {
+    float: left;
+    width: 30%;
+}
+
+#aboutUsTextDhen {
+    float: left;
+    width: 70%;
+}
+
+/* End of About Us Page CSS */
+
 /* Start of Contact Page CSS */
 
 #contactPageFormDhen {
@@ -280,6 +340,7 @@ footer #copyrightDhen {
 #gameListDhen {
     display: flex;
     flex-wrap: wrap;
+    width: 70%;
     background: rgba(68, 68, 68, 0.9);
     border-radius: 20px;
     padding: 20px;
