@@ -29,6 +29,7 @@ session_start();
                 while ($row = $result->fetch_assoc()) {
                     $gameId = $row["gameId"];
                     $gameAmount = $_SESSION["basketDhen"][$row["gameId"]]["amount"];
+                    $price = round($row["gamePrice"] * $gameAmount,2);
                     echo "<tr>";
                     echo "<td><img src='" . $row["gamePicture"] . "'></td>";
                     echo "<td><p>" . $row["gameName"] . "</p></td>";
@@ -38,9 +39,9 @@ session_start();
                     echo "<input type='number' onchange='this.form.submit()' class='gameAmountCheckoutDhen' name='amount' step='1' min='1' max='10' value='$gameAmount'>";
                     echo "<a class='gameRemoveCheckoutDhen' href='php/changeBasket.php?gameId=$gameId&delete=1'>X</a>";
                     echo "</form></td>";
-                    echo "<td><p>&euro;" . $row["gamePrice"] * $gameAmount . "</p></td>";
+                    echo "<td><p>&euro;" . number_format($price,2) . "</p></td>";
                     echo "</tr>";
-                    $totalSum = $totalSum + $row["gamePrice"] * $gameAmount;
+                    $totalSum = $totalSum +  $price;
                 }
             }
         }
