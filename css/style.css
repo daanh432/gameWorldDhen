@@ -20,11 +20,9 @@ body {
 }
 
 .wrapperDhen {
-    position: relative;
     width: 80%;
     margin: 20px auto 0 auto;
     min-height: calc(100vh - 160px);
-    /*overflow: hidden;*/
 }
 
 .clearfix {
@@ -61,7 +59,7 @@ header #logoDhen:hover {
     position: absolute;
     right: 10px;
     height: 100%;
-    margin-right:50px;
+    margin-right: 50px;
 }
 
 .basketIconDhen {
@@ -137,7 +135,7 @@ header #logoDhen:hover {
 
 .menuGamesItemDropdownDhen:hover {
     transition: 0.5s;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* End of Header CSS */
@@ -297,7 +295,7 @@ footer #copyrightDhen {
     outline: none;
 }
 
-.userFormDhen input[type=submit]:hover {
+input[type=submit]:hover, #goToCheckoutDhen:hover {
     background-color: #4CAF50;
     color: white;
     border: 3px solid #4CAF50;
@@ -415,6 +413,29 @@ footer #copyrightDhen {
 .gameCategoryIncorrectDhen p {
     margin-top: 85px;
     text-align: center;
+}
+
+#orderButtonContainerDhen {
+    width: 200px;
+    position: fixed;
+    right: 20px;
+    top: 250px;
+    padding: 10px;
+    background-color: rgba(68, 68, 68, 0.8);
+    color: white;
+    border-radius: 20px;
+}
+
+#orderButtonContainerDhen p {
+    text-align: center;
+}
+
+.multiOrderButtonDhen {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    cursor: pointer;
+    border: 3px solid #ccc;
 }
 
 /* End of Games CSS */
@@ -550,7 +571,7 @@ footer #copyrightDhen {
     margin-top: 20px;
 }
 
-#productInfoDetailsDhen p {
+#productInfoDetailsDhen p, #productInfoDetailsDhen h1{
     color: white;
 }
 
@@ -572,6 +593,8 @@ footer #copyrightDhen {
     width: 70%;
     padding: 10px 0 10px 0;
     cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
 }
 
 /* End of Product Info CSS */

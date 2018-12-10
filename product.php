@@ -18,7 +18,7 @@ include_once('./php/mysql.php');
     <?php
     if (isset($_GET["productId"])) {
         $productIdDhen = mysqli_real_escape_string($conn, $_GET["productId"]);
-        $sql = "SELECT * from games JOIN categorys WHERE categorys.id = games.categoryId AND games.gameId = '$productIdDhen'";
+        $sql = "SELECT * from games NATURAL JOIN categorys WHERE games.gameId = '$productIdDhen'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -44,13 +44,13 @@ include_once('./php/mysql.php');
 
                 <div id="productInfoDetailsDhen">
                     <img id="productInfoMainPictureDhen" src="<?php echo $gamePicture; ?>">
-                    <h1 style='color:<?php echo $categoryColor; ?>'><?php echo $gameName; ?></h1>
+                    <h1><?php echo $gameName; ?></h1>
                     <p><?php echo $gameDescription; ?></p>
                     <div id="productInfoOrderDhen">
                         <form action="php/addToBasket.php" method="GET">
                             <input type="text" class="hiddenInputDhen" name="gameId" value="<?php echo $gameId; ?>">
                             <input type="number" name="amount" step="1" min="1" max="10" value="1">
-                            <input type="submit">
+                            <input type="submit" value="Order">
                         </form>
                     </div>
                 </div>

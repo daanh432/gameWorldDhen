@@ -2,26 +2,39 @@
 
 session_start();
 
-$amountVal = 1;
 
-if (isset($_GET["amount"])) {
-    $amountVal = $_GET["amount"];
+if (!isset($_SESSION["basketDhen"])) {
+    $_SESSION["basketDhen"] = [];
 }
 
-if (isset($_GET["gameId"])) {
-    if (isset($_SESSION["basketDhen"])) {
-        // IF session exists check if game is in it if yes then add another copy of same game
-        if (isset($_SESSION["basketDhen"][$_GET["gameId"]]) && !isset($_GET["amount"])) {
-            $_SESSION["basketDhen"][$_GET["gameId"]] = ["amount" => $_SESSION["basketDhen"][$_GET["gameId"]]["amount"] + 1];
+if (isset($_GET["amount"]) && isset($_GET["gameId"]) && is_numeric($_GET["gameId"]) && is_numeric($_GET["amount"])) {
+    $amount = round($_GET["amount"], 0);
+    $gameId = $_GET["gameId"];
+    if ($amount >= 1 && $amount <= 10) {
+        if (isset($_SESSION["basketDhen"][$gameId])) {
+            $amount = $_SESSION["basketDhen"][$gameId]["amount"] + $amount;
+            if ($amount >= 1 && $amount <= 10) {
+                $_SESSION["basketDhen"][$gameId] = ["amount" => $amount];
+            }
         } else {
-            $_SESSION["basketDhen"][$_GET["gameId"]] = ["amount" => $amountVal];
+            $_SESSION["basketDhen"][$gameId] = ["amount" => $amount];
         }
-    } else {
-        // If session doesnt exist yet create it and add the game to it
-        $_SESSION["basketDhen"] = [];
-        $_SESSION["basketDhen"][$_GET["gameId"]] = ["amount" => $amountVal];
+    }
+} else {
+    foreach ($_POST as $key => $value) {
+        if ($value == "AddToBasket") {
+            if (isset($_SESSION["basketDhen"][$key])) {
+                $amount = $_SESSION["basketDhen"][$key]["amount"] + 1;
+                if ($amount >= 1 && $amount <= 10) {
+                    $_SESSION["basketDhen"][$key] = ["amount" => $amount];
+                }
+            } else {
+                $_SESSION["basketDhen"][$key] = ["amount" => 1];
+            }
+        }
     }
 }
+
 
 header("Location: ../basket.php");
 die();

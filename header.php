@@ -10,13 +10,13 @@
                     <?php
                     include_once("./php/mysql.php");
 
-                    $sql = "SELECT id,categoryName from categorys";
+                    $sql = "SELECT categoryId,categoryName from categorys";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
-                            echo "<a class='menuGamesItemDropdownDhen' href='games.php?categoryId=" . $row["id"] . "'>" . $row["categoryName"] . "</a>";
+                            echo "<a class='menuGamesItemDropdownDhen' href='games.php?categoryId=" . $row["categoryId"] . "'>" . $row["categoryName"] . "</a>";
                         }
                     }
                     ?>

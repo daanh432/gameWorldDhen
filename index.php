@@ -22,14 +22,14 @@
     <?php
     include_once("./php/mysql.php");
 
-    $sql = "SELECT id,categoryImage from categorys";
+    $sql = "SELECT categoryId,categoryImage from categorys";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
         echo "<div id='categoryButtonsContainerDhen'>";
         while ($row = $result->fetch_assoc()) {
-            echo "<a href='games.php?categoryId=" . $row["id"] . "' style='background: rgba(255,255,255, 0.4) url(\"" . $row["categoryImage"] . "\") no-repeat; background-size:contain;' class='categoryButtonsDhen'></a>";
+            echo "<a href='games.php?categoryId=" . $row["categoryId"] . "' style='background: rgba(255,255,255, 0.4) url(\"" . $row["categoryImage"] . "\") no-repeat; background-size:contain;' class='categoryButtonsDhen'></a>";
         }
         echo "</div>";
     }
