@@ -37,13 +37,13 @@ include_once('./php/mysql.php');
 
 
                 <div id="productExampleImagesDhen">
-                    <img id="productInfoSecondaryPictureDhen" src="<?php echo $gamePicture2; ?>">
-                    <img id="productInfoTertiaryPictureDhen" src="<?php echo $gamePicture3; ?>">
+                    <img id="productInfoSecondaryPictureDhen" alt="Product Secondary Picture" src="<?php echo $gamePicture2; ?>">
+                    <img id="productInfoTertiaryPictureDhen" alt="Product Tertiary Picture" src="<?php echo $gamePicture3; ?>">
                     <div class='clearfix'></div>
                 </div>
 
                 <div id="productInfoDetailsDhen">
-                    <img id="productInfoMainPictureDhen" src="<?php echo $gamePicture; ?>">
+                    <img id="productInfoMainPictureDhen" alt="Product Primary Picture" src="<?php echo $gamePicture; ?>">
                     <h1><?php echo $gameName; ?></h1>
                     <p><?php echo $gameDescription; ?></p>
                     <div id="productInfoOrderDhen">

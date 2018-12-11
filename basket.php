@@ -31,7 +31,7 @@ session_start();
                     $gameAmount = $_SESSION["basketDhen"][$row["gameId"]]["amount"];
                     $price = round($row["gamePrice"] * $gameAmount,2);
                     echo "<tr>";
-                    echo "<td><img src='" . $row["gamePicture"] . "'></td>";
+                    echo "<td><img alt='Product Primary Picture' src='" . $row["gamePicture"] . "'></td>";
                     echo "<td><p>" . $row["gameName"] . "</p></td>";
                     echo "<td><p>" . $row["gameDescription"] . "</p></td>";
                     echo "<td><form method='GET' action='php/changeBasket.php'>";
@@ -45,7 +45,7 @@ session_start();
                 }
             }
         }
-        echo "<tr><td></td><td></td><td></td><td><p>Total: &euro;" . $totalSum . "</p></td><td><button id='goToCheckoutDhen'>Go to checkout</button></td></tr>";
+        echo "<tr><td></td><td></td><td></td><td><p>Total: &euro;" . number_format($totalSum,2) . "</p></td><td><button id='goToCheckoutDhen'>Go to checkout</button></td></tr>";
         echo "</table>";
 
     } else {

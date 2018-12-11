@@ -12,7 +12,7 @@
 <div class="wrapperDhen">
     <div id="aboutUsPageDhen">
         <div id="aboutUsImageDhen">
-            <img src="images/aboutImage.jpg">
+            <img alt="Team picture" src="images/aboutImage.jpg">
         </div>
         <div id="aboutUsTextDhen">
             <h1>About us</h1>

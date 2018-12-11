@@ -12,7 +12,7 @@
 <div class="wrapperDhen">
     <div id="bannerDhen">
         <div id="bannerImageDhen">
-            <img src="images/banner.jpg">
+            <img alt="Websites banner picture" src="images/banner.jpg">
         </div>
         <div id="bannerTextDhen">
             <h1>Welcome to Game World!</h1>
