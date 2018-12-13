@@ -29,6 +29,7 @@ include_once('./php/mysql.php');
                 $categoryTextColor = $row["categoryTextColor"];
                 $gameId = $row["gameId"];
                 $gameName = $row["gameName"];
+                $gamePrice = $row["gamePrice"];
                 $gameDescription = $row["gameDescription"];
                 $gamePicture = $row["gamePicture"];
                 $gamePicture2 = $row["gamePicture2"];
@@ -47,6 +48,7 @@ include_once('./php/mysql.php');
                     <h1><?php echo $gameName; ?></h1>
                     <p><?php echo $gameDescription; ?></p>
                     <div id="productInfoOrderDhen">
+                        <p id="productGamePriceDhen">Per stuk: &euro;<?php echo $gamePrice;?></p>
                         <form action="php/addToBasket.php" method="GET">
                             <input type="text" class="hiddenInputDhen" name="gameId" value="<?php echo $gameId; ?>">
                             <input type="number" name="amount" step="1" min="1" max="10" value="1">

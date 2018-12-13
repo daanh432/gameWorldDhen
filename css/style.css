@@ -540,7 +540,7 @@ input[type=submit]:hover, #goToCheckoutDhen:hover {
 /* Start of Product Info CSS */
 
 #productInfoDhen {
-    width: 80%;
+    width: 60%;
     display: block;
     background: rgba(68, 68, 68, 0.9);
     border-radius: 20px;
@@ -580,14 +580,27 @@ input[type=submit]:hover, #goToCheckoutDhen:hover {
 
 #productInfoOrderDhen {
     position: absolute;
-    right: 0;
-    width: 30%;
+    right: 20px;
+    bottom: 20px;
+    width: 290px;
+}
+
+#productGamePriceDhen {
+    color:white;
+    display: inline-block;
+}
+
+#productInfoDetailsDhen form {
+    width:100%;
+    display: inline-block;
+    margin: 0 0 0 auto;
 }
 
 #productInfoDetailsDhen form input[type=number] {
-    width: 10%;
+    width: 25%;
     padding: 9px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 #productInfoDetailsDhen form input[type=submit] {
@@ -598,6 +611,7 @@ input[type=submit]:hover, #goToCheckoutDhen:hover {
     cursor: pointer;
     -webkit-transition: 0.5s;
     transition: 0.5s;
+    box-sizing: border-box;
 }
 
 /* End of Product Info CSS */
