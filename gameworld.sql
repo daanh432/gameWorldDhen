@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 10, 2018 at 09:28 AM
+-- Generation Time: Dec 14, 2018 at 08:53 AM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.20
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `gameworld`
 --
+CREATE DATABASE IF NOT EXISTS `gameworld` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `gameworld`;
 
 -- --------------------------------------------------------
 
@@ -67,7 +69,7 @@ CREATE TABLE `games` (
 --
 
 INSERT INTO `games` (`gameId`, `categoryId`, `gameName`, `gameDescription`, `gamePicture`, `gamePicture2`, `gamePicture3`, `gamePrice`) VALUES
-(1, 3, 'Watch Dogs 2', 'Watch Dogs 2 is een action-adventure third-person shooter ontwikkeld door Ubisoft Montreal. Het spel werd op 15 november 2016 uitgegeven door Ubisoft voor de PlayStation 4', 'images/games/watchDogs2/main.jpg', 'images/games/watchDogs2/one.jpg', 'images/games/watchDogs2/two.jpg', '59.99'),
+(1, 3, 'Watch Dogs 2', 'Play as Marcus Holloway, a brilliant young hacker living in the birthplace of the tech revolution, the San Francisco Bay Area. Team up with Dedsec, a notorious group of hackers, and expose the hidden dangers of ctOS 2.0, which, in the hands of corrupt corporations, is being wrongfully used to monitor and manipulate citizens on a massive scale.', 'images/games/watchDogs2/main.jpg', 'images/games/watchDogs2/one.jpg', 'images/games/watchDogs2/two.jpg', '59.99'),
 (2, 1, 'Rocket League', 'Rocket League is a vehicular soccer video game developed and published by Psyonix. The game was first released for Microsoft Windows and PlayStation 4 in July 2015, with ports for Xbox One, macOS, Linux, and Nintendo Switch being released later on.', 'images/games/rocketLeague/main.jpg', 'images/games/rocketLeague/one.jpg', 'images/games/rocketLeague/two.jpg', '24.99'),
 (3, 2, 'Don\'t Starve Together', 'Don\'t Starve Together is somewhat of a sequel to Don\'t Starve, and features the highly requested multiplayer mechanics. It was originally scheduled to come out in Summer 2014, though a specific date was not given. However, sign-ups for a limited-access, closed Beta were released. It came out on Mac and Linux after being finalized on Windows.', 'images/games/dontStarveTogheter/main.jpg', 'images/games/dontStarveTogheter/one.jpg', 'images/games/dontStarveTogheter/two.jpg', '15.99'),
 (4, 3, 'Tom Clancy\'s Rainbow Six Siege', 'Master the art of destruction and gadgetry in Tom Clancy’s Rainbow Six Siege. Face intense close quarters combat, high lethality, tactical decision making, team play and explosive action within every moment. Experience a new era of fierce firefights and expert strategy born from the rich legacy of past Tom Clancy\'s Rainbow Six games.', 'images/games/rainbowSixSiege/main.jpg', 'images/games/rainbowSixSiege/one.jpg', 'images/games/rainbowSixSiege/two.jpg', '14.99'),
