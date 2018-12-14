@@ -20,11 +20,9 @@ body {
 }
 
 .wrapperDhen {
-    position: relative;
     width: 80%;
     margin: 20px auto 0 auto;
     min-height: calc(100vh - 160px);
-    /*overflow: hidden;*/
 }
 
 .clearfix {
@@ -33,6 +31,7 @@ body {
 
 /* Header CSS */
 header {
+    position: relative;
     height: 80px;
     background: rgba(68, 68, 68, 1);
     width: 80%;
@@ -41,8 +40,9 @@ header {
 }
 
 header #logoDhen {
-    margin-top: 14px;
-    float: left;
+    position: absolute;
+    top: 14px;
+    left: 50px;
     color: #fff;
     font-size: 250%;
     font-weight: bold;
@@ -56,8 +56,10 @@ header #logoDhen:hover {
 }
 
 #navigationDhen {
-    float: right;
+    position: absolute;
+    right: 10px;
     height: 100%;
+    margin-right: 50px;
 }
 
 .basketIconDhen {
@@ -65,26 +67,9 @@ header #logoDhen:hover {
     height: 50px;
     padding: 0;
     margin: 0;
-}
-
-@media only screen and (max-width: 600px) {
-    header #logoDhen {
-        margin-left: 10px;
-    }
-
-    #navigationDhen {
-        margin-right: 0;
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    header #logoDhen {
-        margin-left: 70px;
-    }
-
-    #navigationDhen {
-        margin-right: 70px;
-    }
+    position: absolute;
+    top: 12px;
+    right: -40px;
 }
 
 #navigationDhen ul {
@@ -97,10 +82,9 @@ header #logoDhen:hover {
 #navigationDhen li {
     display: inline-block;
     height: 100%;
-    overflow: hidden;
 }
 
-#navigationDhen li a {
+.navigationHrefDhen {
     display: inline-block;
     color: white;
     text-align: center;
@@ -115,9 +99,44 @@ header #logoDhen:hover {
     margin: 0;
 }
 
-#navigationDhen li a:hover {
+.navigationHrefDhen:hover, .basketIconDhen:hover {
     background-color: #111;
     transition: 0.5s;
+}
+
+#menuGamesDropdownDhen {
+    position: relative;
+    display: inline-block;
+}
+
+#menuGamesDropdownContentDhen {
+    display: none;
+    position: absolute;
+    background-color: #f8f8f8;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+#menuGamesDropdownDhen:hover #menuGamesDropdownContentDhen {
+    display: block;
+}
+
+.menuGamesItemDropdownDhen {
+    display: block;
+    color: black;
+    text-align: left;
+    padding: 15px 5px 15px 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menuGamesItemDropdownDhen:hover {
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* End of Header CSS */
@@ -196,7 +215,7 @@ footer #copyrightDhen {
     border-radius: 20px;
     color: black;
     text-decoration: none;
-    margin: 0px 2px;
+    margin: 0 2px;
     cursor: pointer;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -210,6 +229,32 @@ footer #copyrightDhen {
 }
 
 /* End of Index Page CSS */
+
+/* Start of About Us Page CSS */
+
+#aboutUsPageDhen {
+    width: 70%;
+    margin: 20px auto 0 auto;
+    background-color: rgba(68, 68, 68, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+}
+
+#aboutUsImageDhen {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#aboutUsImageDhen img {
+    width: 100%;
+}
+
+#aboutUsTextDhen {
+    width: 100%;
+}
+
+/* End of About Us Page CSS */
 
 /* Start of Contact Page CSS */
 
@@ -254,7 +299,7 @@ footer #copyrightDhen {
     outline: none;
 }
 
-.userFormDhen input[type=submit]:hover {
+input[type=submit]:hover, #goToCheckoutDhen:hover {
     background-color: #4CAF50;
     color: white;
     border: 3px solid #4CAF50;
@@ -269,7 +314,6 @@ footer #copyrightDhen {
 /* Start of Games CSS */
 
 #categoryNameBannerDhen {
-    width: 831px;
     display: block;
     border-radius: 20px;
     padding: 20px;
@@ -283,9 +327,22 @@ footer #copyrightDhen {
     display: inline-block;
 }
 
+@media only screen and (max-width: 900px) {
+    .gameItemsDhen {
+        flex-basis: 49%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .gameItemsDhen {
+        flex-basis: 24%;
+    }
+}
+
 #gameListDhen {
-    width: 831px;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
     background: rgba(68, 68, 68, 0.9);
     border-radius: 20px;
     padding: 20px;
@@ -293,7 +350,6 @@ footer #copyrightDhen {
 }
 
 .gameItemsDhen {
-    float: left;
     position: relative;
     height: 300px;
     width: 200px;
@@ -304,14 +360,10 @@ footer #copyrightDhen {
     text-align: center;
 }
 
-.gameItemsDhen:nth-child(4n) {
-    margin-right: 0;
-}
-
 .gameItemsDhen img {
     display: block;
     height: 200px;
-    width: 200px;
+    width: 100%;
     border: 0;
     background-color: rgba(68, 68, 68, 0.5);
     vertical-align: middle;
@@ -365,6 +417,29 @@ footer #copyrightDhen {
 .gameCategoryIncorrectDhen p {
     margin-top: 85px;
     text-align: center;
+}
+
+#orderButtonContainerDhen {
+    width: 200px;
+    position: fixed;
+    right: 20px;
+    top: 250px;
+    padding: 10px;
+    background-color: rgba(68, 68, 68, 0.8);
+    color: white;
+    border-radius: 20px;
+}
+
+#orderButtonContainerDhen p {
+    text-align: center;
+}
+
+.multiOrderButtonDhen {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    cursor: pointer;
+    border: 3px solid #ccc;
 }
 
 /* End of Games CSS */
@@ -466,7 +541,7 @@ footer #copyrightDhen {
 /* Start of Product Info CSS */
 
 #productInfoDhen {
-    width: 80%;
+    width: 60%;
     display: block;
     background: rgba(68, 68, 68, 0.9);
     border-radius: 20px;
@@ -500,20 +575,33 @@ footer #copyrightDhen {
     margin-top: 20px;
 }
 
-#productInfoDetailsDhen p {
+#productInfoDetailsDhen p, #productInfoDetailsDhen h1{
     color: white;
 }
 
 #productInfoOrderDhen {
     position: absolute;
-    right: 0;
-    width: 30%;
+    right: 20px;
+    bottom: 20px;
+    width: 290px;
+}
+
+#productGamePriceDhen {
+    color:white;
+    display: inline-block;
+}
+
+#productInfoDetailsDhen form {
+    width:100%;
+    display: inline-block;
+    margin: 0 0 0 auto;
 }
 
 #productInfoDetailsDhen form input[type=number] {
-    width: 10%;
+    width: 25%;
     padding: 9px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 #productInfoDetailsDhen form input[type=submit] {
@@ -522,6 +610,9 @@ footer #copyrightDhen {
     width: 70%;
     padding: 10px 0 10px 0;
     cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    box-sizing: border-box;
 }
 
 /* End of Product Info CSS */

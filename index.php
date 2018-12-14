@@ -8,11 +8,11 @@
     <title>Game World</title>
 </head>
 <body>
-<?php include("header.html"); ?>
+<?php include("header.php"); ?>
 <div class="wrapperDhen">
     <div id="bannerDhen">
         <div id="bannerImageDhen">
-            <img src="images/banner.jpg">
+            <img alt="Websites banner picture" src="images/banner.jpg">
         </div>
         <div id="bannerTextDhen">
             <h1>Welcome to Game World!</h1>
@@ -22,14 +22,14 @@
     <?php
     include_once("./php/mysql.php");
 
-    $sql = "SELECT id,categoryImage from categorys";
+    $sql = "SELECT categoryId,categoryImage from categorys";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
         echo "<div id='categoryButtonsContainerDhen'>";
         while ($row = $result->fetch_assoc()) {
-            echo "<a href='games.php?categoryId=" . $row["id"] . "' style='background: rgba(255,255,255, 0.4) url(\"" . $row["categoryImage"] . "\") no-repeat; background-size:contain;' class='categoryButtonsDhen'></a>";
+            echo "<a href='games.php?categoryId=" . $row["categoryId"] . "' style='background: rgba(255,255,255, 0.4) url(\"" . $row["categoryImage"] . "\") no-repeat; background-size:contain;' class='categoryButtonsDhen'></a>";
         }
         echo "</div>";
     }

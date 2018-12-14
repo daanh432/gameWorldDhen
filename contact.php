@@ -8,7 +8,7 @@
     <title>Game World - Contact</title>
 </head>
 <body>
-<?php include("header.html"); ?>
+<?php include("header.php"); ?>
 <div class="wrapperDhen">
     <?php
     if (!isset($_POST["Send"])) {
@@ -30,10 +30,11 @@
         <?php
     } else {
         $msg = $_POST["message"]; // Get the message from POST
-        $name = $_POST["name"];
+        $name = $_POST["name"]; // Get the name from POST
+        $email = $_POST["emailAddress"]; // Get the email from POST
         $subject = $_POST["subject"]; // Get the subject from POST
         $msg = wordwrap($msg, 80); // New line more then 80 characters on single line
-        mail("daan@daanhendriks.nl", "Contact Form Message: " . $subject, "A message from: $name \n\n" . $msg); // Actually send the email to website administrator
+        mail("daan@daanhendriks.nl", "Contact Form Message: " . $subject, "A message from: $name\nEmail-Address: $email\n\n" . $msg); // Actually send the email to website administrator
         ?>
         <div id="contactPageFormDhen">
             <h1>Thanks for sending us a message!</h1>
